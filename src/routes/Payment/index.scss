@@ -1,0 +1,82 @@
+@import '../../_var.scss';
+
+.paymentWrapper {
+  display: flex;
+  min-height: 100vh;
+  .leftCol {
+    flex: 1;
+    background-color: $green;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    .leftBannerImg {
+      width: 100%;
+      min-width: 553px;
+      height: 339px;
+      background: url(../../assets/banner.png) no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .leftContent {
+      width: 553px;
+      h1 {
+        font-size: 40px;
+        margin: 55px 0 25px 131px;
+        font-weight: normal;
+      }
+      .billContent {
+        margin-left: 138px;
+        margin-right: 91px;
+        .billLabel {
+          font-size: 18px;
+          font-weight: bold;
+          margin: 8px 0;
+        }
+        .billValue {
+          font-size: 24px;
+          margin-bottom: 16px;
+          font-weight: normal;
+        }
+        .billPriceLabel {
+          margin-top: 53px;
+        }
+        .billPriceValue {
+          text-align: right;
+          span {
+            font-size: 36px;
+            padding: 0 24px;
+          }
+        }
+        .billPaymethod {
+          margin-top: 47px;
+        }
+        .billPayBtn {
+          border: none;
+          background-color: $white;
+          width: 360px;
+          height: 90px;
+          margin-top: 12px;
+          font-size: 32px;
+          color: $gray;
+          text-align: left;
+          padding-left: 38px;
+          span {
+            font-size: 14px;
+            padding-left: 21px;
+          }
+        }
+      }
+    }
+  }
+  .rightCol {
+    flex: 1.3;
+    background-color: $black;
+    .leftContent {
+      min-width: 726px;
+    }
+  }
+
+
+
+}
+

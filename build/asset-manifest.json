@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.b702cbcf.chunk.css",
-    "main.js": "/static/js/main.5ca058fe.chunk.js",
-    "main.js.map": "/static/js/main.5ca058fe.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.15638f9b.chunk.js": "/static/js/2.15638f9b.chunk.js",
-    "static/js/2.15638f9b.chunk.js.map": "/static/js/2.15638f9b.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.74c820b3c3e8ba31fee684077c1dbd64.js": "/precache-manifest.74c820b3c3e8ba31fee684077c1dbd64.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.b702cbcf.chunk.css.map": "/static/css/main.b702cbcf.chunk.css.map",
-    "static/media/index.scss": "/static/media/banner.1d1d9e4d.png",
-    "static/media/jcb.svg": "/static/media/jcb.5fdcc1b3.svg",
-    "static/media/master.svg": "/static/media/master.869a98ba.svg",
-    "static/media/up.svg": "/static/media/up.2728fd6b.svg",
-    "static/media/visa.svg": "/static/media/visa.4d22a0b9.svg"
+    "main.css": "./static/css/main.d8978f9d.chunk.css",
+    "main.js": "./static/js/main.f1e95a11.chunk.js",
+    "main.js.map": "./static/js/main.f1e95a11.chunk.js.map",
+    "runtime~main.js": "./static/js/runtime~main.d653cc00.js",
+    "runtime~main.js.map": "./static/js/runtime~main.d653cc00.js.map",
+    "static/js/2.15638f9b.chunk.js": "./static/js/2.15638f9b.chunk.js",
+    "static/js/2.15638f9b.chunk.js.map": "./static/js/2.15638f9b.chunk.js.map",
+    "index.html": "./index.html",
+    "precache-manifest.530c9b27b2f5046d891c946fb998a34a.js": "./precache-manifest.530c9b27b2f5046d891c946fb998a34a.js",
+    "service-worker.js": "./service-worker.js",
+    "static/css/main.d8978f9d.chunk.css.map": "./static/css/main.d8978f9d.chunk.css.map",
+    "static/media/index.scss": "./static/media/banner.1d1d9e4d.png",
+    "static/media/jcb.svg": "./static/media/jcb.5fdcc1b3.svg",
+    "static/media/master.svg": "./static/media/master.869a98ba.svg",
+    "static/media/up.svg": "./static/media/up.2728fd6b.svg",
+    "static/media/visa.svg": "./static/media/visa.4d22a0b9.svg"
   }
 }

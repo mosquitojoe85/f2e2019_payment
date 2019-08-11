@@ -7,4 +7,9 @@ $lightGray: #F0F0F0;
 $red: #FF521A;
 
 
-$max_width: 1280px;
+@mixin phone_width() {
+  @media all and (max-width: 800px) {
+    @content;
+  }
+}
+

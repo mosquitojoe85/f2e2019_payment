@@ -8,6 +8,7 @@ import up from '../../assets/up.svg';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
 import TextMask from '../../components/TextMask';
+import {withRouter} from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   textField: {
@@ -34,7 +35,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function Payment() {
+function Payment(props) {
   const classes = useStyles();
   const [name, setName] = useState('');
   const [creditCard, setCreditCard] = useState('');
@@ -54,8 +55,7 @@ function Payment() {
     };
     setErr(check);
     if(Object.keys(check).every(e => check[e] === false)) {
-      console.log('"pass"--->', "pass");
-
+      props.history.push('/success')
     }
   };
 
@@ -74,6 +74,8 @@ function Payment() {
             <div className="billLabel billPriceLabel">本筆訂單將支付</div>
             <div className="billPriceValue"><span>1,250</span>元</div>
             <div className="billLabel billPaymethod">支付方式</div>
+          </div>
+          <div className="payContent">
             <div role="button" className="billPayBtn act">信用卡</div>
             <div role="button" className="billPayBtn">網路ATM<span>(晶片讀卡機轉帳)</span></div>
             <div role="button" className="billPayBtn">ATM櫃員機<span>(實體ATM及網銀)</span></div>
@@ -167,9 +169,8 @@ function Payment() {
           </form>
         </div>
       </div>
-
     </div>
   );
 }
 
-export default Payment;
+export default withRouter(Payment);

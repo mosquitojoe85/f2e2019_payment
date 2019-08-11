@@ -1,0 +1,59 @@
+@import '../../_var.scss';
+
+.successWrapper {
+  background-color: $green;
+  min-height: 100vh;
+  padding-bottom: 105px;
+  .banner {
+    height: 339px;
+    background: url(../../assets/banner.png) no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+  .logo {
+    height: 67px;
+    margin: 51px 0 0 115px;
+    @include phone_width {
+      margin-left: 0;
+      text-align: center;
+    }
+    img {
+      height: 100%;
+    }
+  }
+  h1 {
+    font-size: 40px;
+    font-weight: normal;
+    margin: 39px 0 81px;
+    color: $black;
+    text-align: center;
+  }
+  h2 {
+    font-size: 30px;
+    margin-bottom: 38px;
+    color: $black;
+    text-align: center;
+  }
+  .successLabel {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    color: $black;
+    margin-top: 17px;
+  }
+  .successValue {
+    font-size: 24px;
+    color: $black;
+    text-align: center;
+    margin-top: 8px;
+  }
+  .jumpDesc {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 122px 0 0;
+    text-align: center;
+    div {
+      margin-top: 24px;
+    }
+  }
+}

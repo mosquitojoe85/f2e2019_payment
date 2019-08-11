@@ -7,12 +7,17 @@ import jcb from '../../assets/jcb.svg';
 import up from '../../assets/up.svg';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
-import FormControl from '@material-ui/core/FormControl';
-
+import TextMask from '../../components/TextMask';
 
 const useStyles = makeStyles(theme => ({
   textField: {
     paddingTop: theme.spacing(1),
+  },
+  marginTop :{
+    marginTop: 54,
+  },
+  helfWidth: {
+    width: 220,
   },
   label: {
     fontSize: 18
@@ -22,12 +27,38 @@ const useStyles = makeStyles(theme => ({
     paddingRight: theme.spacing(1),
     paddingLeft: theme.spacing(1),
     color: '#F0F0F0',
+  },
+  helperText: {
+    color: '#FFD065',
+    fontSize: 14
   }
 }));
 
 function Payment() {
   const classes = useStyles();
   const [name, setName] = useState('');
+  const [creditCard, setCreditCard] = useState('');
+  const [date, setDate] = useState('');
+  const [number, setNumber] = useState('');
+  const [mobile, setMobile] = useState('');
+  const [err, setErr] = useState({ name: false, creditCard: false, date: false, number: false, mobile: false, });
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const check = {
+      name: name === '',
+      mobile: mobile === '',
+      creditCard: creditCard === '' || creditCard.match(/\d+/g).join('').length !== 16,
+      date: date === '' || date.match(/\d+/g).join('').length !== 4,
+      number: number === '' || number.match(/\d+/g).join('').length !== 3,
+    };
+    setErr(check);
+    if(Object.keys(check).every(e => check[e] === false)) {
+      console.log('"pass"--->', "pass");
+
+    }
+  };
+
 
   return (
     <div className="paymentWrapper">
@@ -53,7 +84,7 @@ function Payment() {
       <div className="rightCol">
         <div className="rightContent">
           <h1>信用卡付款</h1>
-          <form noValidate autoComplete="off">
+          <form onSubmit={handleSubmit}>
             <div className="creditBlock">
               <div className="creditType">
                 <button><img src={visa} alt="visa" /></button>
@@ -71,24 +102,67 @@ function Payment() {
                 placeholder="請輸入持卡人姓名"
                 InputLabelProps={{ shrink: true, className: classes.label  }}
                 InputProps={{ className: classes.input }}
-                error
+                error={err.name}
               />
-              <FormControl>
-                <TextField
-                label="持卡人"
-                className={classes.textField}
-                value={name}
-                onChange={(e) => setName(e.target.value)}
+              <TextField
+                className={`${classes.textField} ${classes.marginTop}`}
+                label="信用卡號"
+                value={creditCard}
+                onChange={(e) => setCreditCard(e.target.value)}
+                InputLabelProps={{ shrink: true, className: classes.label  }}
                 fullWidth
                 required
-                placeholder="請輸入持卡人姓名"
-                InputLabelProps={{ shrink: true, className: classes.label  }}
-                InputProps={{ className: classes.input }}
+                InputProps={{
+                  inputComponent: TextMask,
+                  className: classes.input,
+                  type: 'creditCard'
+                }}
+                error={err.creditCard}
               />
-              </FormControl>
-
-              <button type="submit">mm</button>
-
+              <div className="creditBlockHalf">
+                <TextField
+                  className={`${classes.textField} ${classes.marginTop} ${classes.helfWidth}`}
+                  label="有效月年"
+                  value={date}
+                  onChange={(e) => setDate(e.target.value)}
+                  InputLabelProps={{ shrink: true, className: classes.label  }}
+                  required
+                  InputProps={{
+                    inputComponent: TextMask,
+                    className: classes.input,
+                    type: 'date'
+                  }}
+                  error={err.date}
+                />
+                <TextField
+                  className={`${classes.textField} ${classes.marginTop} ${classes.helfWidth}`}
+                  label="信用卡背面末三碼"
+                  value={number}
+                  onChange={(e) => setNumber(e.target.value)}
+                  InputLabelProps={{ shrink: true, className: classes.label  }}
+                  required
+                  InputProps={{
+                    inputComponent: TextMask,
+                    className: classes.input,
+                    type: 'threeNum'
+                  }}
+                  error={err.number}
+                />
+              </div>
+              <TextField
+                className={`${classes.textField} ${classes.marginTop}`}
+                label="手機號碼"
+                value={mobile}
+                onChange={(e) => setMobile(e.target.value)}
+                InputLabelProps={{ shrink: true, className: classes.label  }}
+                fullWidth
+                required
+                InputProps={{ className: classes.input, }}
+                helperText="如非台灣手機號碼請加國碼，如香港為852，則輸入852123456789。若刷卡驗證採簡訊驗證，簡訊將發送至您於發卡銀行留存的手機號碼。"
+                FormHelperTextProps={{ className: classes.helperText }}
+                error={err.mobile}
+              />
+              <button type="submit" className="submitBtn" onClick={handleSubmit}>確認付款</button>
             </div>
           </form>
         </div>

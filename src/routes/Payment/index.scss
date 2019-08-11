@@ -112,7 +112,23 @@
               width: 100%;
             }
           }
-
+        }
+        .creditBlockHalf {
+          display: flex;
+          justify-content: space-between;
+        }
+        .submitBtn {
+          width: 257px;
+          height: 45px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: none;
+          background-color: $green;
+          color: $black;
+          margin: 64px auto 0;
+          font-size: 18px;
+          cursor: pointer;
         }
       }
     }

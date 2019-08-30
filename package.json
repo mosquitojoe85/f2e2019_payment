@@ -34,7 +34,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": ".",
+  "homepage": "https://mosquitojoe85.github.io/f2e2019_payment/build/",
   "devDependencies": {
     "gh-pages": "^2.1.1"
   }

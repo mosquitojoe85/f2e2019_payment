@@ -15,6 +15,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -33,5 +34,8 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://mosquitojoe85.github.io/f2e2019_payment/build"
+  "homepage": ".",
+  "devDependencies": {
+    "gh-pages": "^2.1.1"
+  }
 }

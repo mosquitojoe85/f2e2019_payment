@@ -22,7 +22,7 @@ const theme = createMuiTheme({
 
 ReactDOM.render(
   <ThemeProvider theme={theme}>
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Route path="/" exact component={Payment} />
       <Route path="/success" component={Success} />
     </Router>
